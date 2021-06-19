@@ -1,7 +1,36 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@model HotelManagement.Models.Room
+@{Layout = "_Layout";
 }
 
-<h1>Welcome to our hotel!</h1>
+<h5 class="bg-primary text-white text-center p-2">HTML form</h5>
 
+@*  <partial name="_Validation" /> *@
+
+<form asp-action="submitform" method="post" id="htmlform">
+<div asp-validation-summary="All" class="text-danger"></div>
+
+
+   <div class="form-group">
+       <label asp-for="Price"></label>
+       <input class="form-control" asp-for="Price"/>
+   </div>
+
+   
+   <div class="form-group">
+       <label>RoomType</label>
+       <input class="form-control" asp-for="RoomType"/>
+   </div>    
+   <div class="form-group">
+       <label>Description</label>
+       <input class="form-control" asp-for="Description"/>
+   </div> 
+   <div class="form-group">
+       <label>MaximumGuests</label>
+       <input class="form-control" asp-for="MaximumGuests"/>
+   </div> 
+
+     
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

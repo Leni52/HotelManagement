@@ -1,0 +1,78 @@
+﻿
+@inject SignInManager<IdentityUser> signInManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html";charset="utf-8";http-equiv="Content-Type"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<title>@ViewData["Title"] - TheHotelManagement</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @*  <img src="../../img/maker-logo.png" id="logo" asp-append-version="true" />*@
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="index" asp-controller="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="about" asp-controller="home">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="contact" asp-controller="home">Contact</a>
+                        </li>
+                        
+
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <form method="post" asp-action="logout" asp-controller="account">
+                                    <button type="submit" class="nav-link btn btn-link">
+                                        Logout @User.Identity.Name
+                                    </button>
+                                    
+                                </form>
+                        </li>
+                        }
+                        else
+                        {
+                           <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="register" asp-controller="account">Register</a>
+                        </li>  
+                        }
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="login" asp-controller="account">Login</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <br />
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - The Hotel Management >Privacy</a>
+        </div>
+    </footer>
+
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
