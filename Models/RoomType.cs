@@ -5,7 +5,7 @@ namespace HotelManagement.Models
 {
     public class RoomType
     {
-        public Guid ID { get; set; }
+        public int RoomTypeId { get; set; }
         [Required]
         [Display(Name="Name")]
         public string Name { get; set; }

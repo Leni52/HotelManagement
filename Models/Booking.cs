@@ -4,9 +4,9 @@ namespace HotelManagement.Models
 {
     public class Booking
     {
-        public Guid ID { get; set; }
+        public int BookingId { get; set; }
 
-        public Guid RoomId { get; set; }
+        public int RoomId { get; set; }
 
         public virtual  Room Room { get; set; }
 

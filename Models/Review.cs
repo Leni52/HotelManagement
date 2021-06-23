@@ -6,10 +6,10 @@ namespace HotelManagement.Models
     public class Review
     {
 
-        public Guid ID { get; set; }
+        public int ReviewId { get; set; }
 
         [Required]
-        public Guid RoomId { get; set; }
+        public int RoomId { get; set; }
         public virtual  Room Room { get; set; }
 
         //Reviewer info

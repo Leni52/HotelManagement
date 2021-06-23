@@ -8,7 +8,7 @@ namespace HotelManagement.Models
 {
     public class Room
     {
-        public Guid ID { get; set; }
+        public int RoomId { get; set; }
         [Required]
         public int Number { get; set; }
         public virtual RoomType RoomType { get; set; }
