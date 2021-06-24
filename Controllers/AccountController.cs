@@ -20,6 +20,7 @@ namespace HotelManagement.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
 
+        // // // /////////////////////////////
        //Logout user
 
         [HttpPost]
@@ -29,7 +30,7 @@ namespace HotelManagement.Controllers
             return RedirectToAction("index", "home");
         }
 
-
+        // // // /////////////////////////////
         //Register User
         [HttpGet]
         public IActionResult Register()
@@ -50,7 +51,8 @@ namespace HotelManagement.Controllers
                 var result =  await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                   await signInManager.SignInAsync(user, isPersistent: true);
+                    //persistent cookie: false
+                   await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
                 foreach(var error in result.Errors)
@@ -63,7 +65,8 @@ namespace HotelManagement.Controllers
         }
 
 
-
+        // // // /////////////////////////////
+        //LOGIN
         [HttpGet]
         public IActionResult Login()
         {
@@ -72,6 +75,7 @@ namespace HotelManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LogInViewModel model)
         {
+           // model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList;
             if (ModelState.IsValid)
             {
 
@@ -88,5 +92,60 @@ namespace HotelManagement.Controllers
 
             return View(model);
         }
+        // // // /////////////////////////////
+
+        //RESET PASSWORD
+
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if (user == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                var code = "token";
+                var result = await userManager.ResetPasswordAsync(user, code, model.Password);
+                if (result.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View(model);
+
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if (user == null || await userManager.IsEmailConfirmedAsync(user)) ;
+
+            }
+
+
+            return View("ForgetPasswordConfirmation");
+
+        }
+        public IActionResult ForgetPasswordConfirmation()
+        {
+            return View();
+        }
+
     }
 }

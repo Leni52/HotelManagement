@@ -163,3 +163,7 @@ C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\bin\Debug\net5.0\libman.json
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\TestView.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\ForgetPasswordConfirmation.cshtml.g.cs

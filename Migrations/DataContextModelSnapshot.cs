@@ -21,9 +21,10 @@ namespace HotelManagement.Migrations
 
             modelBuilder.Entity("HotelManagement.Models.Booking", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<int>("BookingId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CheckIn")
                         .HasColumnType("datetime2");
@@ -58,13 +59,13 @@ namespace HotelManagement.Migrations
                     b.Property<bool>("Paid")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("RoomId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("TotalFee")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("ID");
+                    b.HasKey("BookingId");
 
                     b.HasIndex("RoomId");
 
@@ -73,23 +74,27 @@ namespace HotelManagement.Migrations
 
             modelBuilder.Entity("HotelManagement.Models.Review", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<int>("ReviewId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewerEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewerName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RoomId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("ReviewId");
 
                     b.HasIndex("RoomId");
 
@@ -98,14 +103,16 @@ namespace HotelManagement.Migrations
 
             modelBuilder.Entity("HotelManagement.Models.Room", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<int>("RoomId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MaximumGuests")
@@ -117,21 +124,22 @@ namespace HotelManagement.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("RoomTypeID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("RoomTypeId")
+                        .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("RoomId");
 
-                    b.HasIndex("RoomTypeID");
+                    b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("HotelManagement.Models.RoomType", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<int>("RoomTypeId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("decimal(18,2)");
@@ -143,9 +151,10 @@ namespace HotelManagement.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("RoomTypeId");
 
                     b.ToTable("RoomTypes");
                 });
@@ -176,7 +185,7 @@ namespace HotelManagement.Migrations
                 {
                     b.HasOne("HotelManagement.Models.RoomType", "RoomType")
                         .WithMany()
-                        .HasForeignKey("RoomTypeID");
+                        .HasForeignKey("RoomTypeId");
 
                     b.Navigation("RoomType");
                 });

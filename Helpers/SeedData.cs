@@ -10,14 +10,7 @@ using System.Threading.Tasks;
 namespace HotelManagement.Helpers
 {   public static class SeedData
     {
-        public static void SeedDatabase(this IApplicationBuilder app)
-        {
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            using (var context = serviceScope.ServiceProvider.GetService<DataContext>())
-            {
-                SeedDatabase(context);
-            }
-        }
+       
 
         public static void SeedDatabase(DataContext context)
         {
@@ -27,27 +20,32 @@ namespace HotelManagement.Helpers
             {
                 Review rv1 = new Review()
                 {
-                    ReviewerName = "Max",
-                    ReviewerEmail = "max@max.com",
-                    //ID=1,
-                    //RoomId = 1,
-                    Description = "Nice room"
-                }; ;
+                     
+                     RoomNumber=100,
+                     ReviewerName = "Max",
+                     ReviewerEmail = "max@max.com",
+                     Description = "Nice room"
+                }; 
                 RoomType r1 = new RoomType()
                 {
-                    BasePrice = 100,
+                 
+                    Name = "RoomType1",
+                    BasePrice = 1000,
                     Description = "Economic class",
-                    //ID = 1,
                     ImageUrl = "img/1.jpg",
-                    Name = "RoomType1"
+                    
                 };
                 context.Rooms.AddRange(
                     new Room
                     {
+                        
                         Number = 100,
+                        RoomType=r1,
                         Available = true,
+                        Price=100,
                         Description = "Very Nice room",
                         MaximumGuests = 3,
+
 
                     }
 

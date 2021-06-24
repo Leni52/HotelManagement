@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uxLdGu8o3BMQ1uDWC/0ticzKb/BrIsBTrtyzQz4PAIcjp8g887c/eDg2z+TUGe91pluSq74ul+2wmIFKygWHTw==",
+  "dgSpecHash": "JOlDjhxoujkyKMtJKrjRuWilIk5bE8brHIDa/6dYagcGQrd1c/L+AGLwWVV1hSd3lv4Sked2jAw5bSMU2NiGQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
   "expectedPackageFiles": [
@@ -174,7 +174,8 @@
     "C:\\Users\\CC-Student\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\CC-Student\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\CC-Student\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.2\\microsoft.netcore.app.host.win-x64.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

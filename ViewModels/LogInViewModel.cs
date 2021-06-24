@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace HotelManagement.ViewModels
         public string Password { get; set; }
         [Display(Name ="Remember me")]
         public bool RememberMe { get; set; }
+        public Func<List<AuthenticationScheme>> ExternalLogins { get; internal set; }
     }
 }
