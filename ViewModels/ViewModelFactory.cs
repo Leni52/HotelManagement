@@ -1,10 +1,11 @@
 ﻿using HotelManagement.Models;
+using HotelManagement.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HotelManagement.ViewModels
+namespace HotelManagement.Models
 {
     public class ViewModelFactory
     {
@@ -12,16 +13,72 @@ namespace HotelManagement.ViewModels
         {
             return new RoomViewModel
             {
-                room = r,
+                Room = r,
                 Action = "Details",
                 ReadOnly = true,
                 Theme = "info",
                 ShowAction = false,
-                roomTypes = r == null ? Enumerable.Empty<RoomType>() :
-                new List<RoomType> { r.RoomType },
+                RoomTypes = r == null ? Enumerable.Empty<RoomType>() :
+                  new List<RoomType> { r.RoomType }
+             
 
 
 
+            };
+        }
+
+        /////////////////////
+        ///CREATE
+        ///
+
+
+        public static RoomViewModel Create(Room room, IEnumerable<RoomType> roomTypes,
+            IEnumerable<Review> reviews)
+        {
+            return new RoomViewModel
+            {
+                Room = room,
+                RoomTypes = roomTypes,
+                Reviews = reviews
+            };
+
+        }
+
+
+        ///////////////////
+        /////EDIT
+        ///
+
+        
+        public static RoomViewModel Edit(Room room, IEnumerable<RoomType> roomTypes, 
+            IEnumerable<Review> reviews)
+        {
+            return new RoomViewModel
+            {
+                Room = room,
+                RoomTypes = roomTypes,
+                Reviews = reviews,
+                Theme = "warning",
+                Action = "Edit"
+            };
+        }
+
+        ////////////////////
+        //////DELETE
+        ///
+
+        public static RoomViewModel Delete(Room room, IEnumerable<RoomType> roomTypes, 
+            IEnumerable<Review> reviews)
+        {
+            return new RoomViewModel
+            {
+
+                Room = room,
+                RoomTypes = roomTypes,
+                Reviews = reviews,
+                Theme = "danger",
+                Action = "Delete",
+                ReadOnly = true
             };
         }
     }

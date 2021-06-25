@@ -1,0 +1,55 @@
+﻿@model RoomViewModel
+@{
+    Layout = "_Layout";
+}
+
+
+<h5 class="bg-@Model.Theme text-white text-center p-2">@Model.Action</h5>
+
+<form asp-action="@Model.Action" method="post">
+<div class="form-group">
+    <label asp-for="Room.RoomId"></label>
+    <input class="form-control" asp-for="Room.RoomId" readonly />
+
+</div>
+<div class="form-group">
+    <label asp-for="Room.Number"></label>
+    <span asp-validation-for="Room.Description" class="text-danger"></span>
+        <input class="form-control" asp-for="Room.Description" />
+
+</div>
+
+<div class="form-group">
+    <label asp-for="Room.Price"></label>
+    <span asp-validation-for="Room.Price" class="text-danger"></span>
+        <input class="form-control" asp-for="Room.Price" readonly="@Model.ReadOnly"/>
+
+
+    </div>
+
+        <div class="form-group">
+    <label asp-for="Room.RoomType.RoomTypeId">Room Type</label>
+    <div>
+    <span asp-validation-for="Room.RoomType.RoomTypeId" class="text-danger"></span>
+   
+
+</div>
+
+
+<select asp-for="Room.RoomType" class="form-control" disabled="@Model.ReadOnly" 
+asp-items="@(new SelectList(Model.RoomTypes, "RoomType.RoomTypeId", "RoomType.Name"))">
+    <option value="" disabled selected>Choose a room type</option>
+</select>
+</div>
+    
+
+
+    
+
+
+    @if (Model.ShowAction)
+    {
+        <button class="btn btn-@Model.Theme" type="submit">@Model.Action</button>
+    }
+    <a class="btn btn-secondary" asp-action="Index">Back</a>
+</form>

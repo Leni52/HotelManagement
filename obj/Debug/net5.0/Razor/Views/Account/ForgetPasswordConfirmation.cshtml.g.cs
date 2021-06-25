@@ -40,8 +40,15 @@ using HotelManagement.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\Views\_ViewImports.cshtml"
+using HotelManagement.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68573da149e1eb6b931c0cbf249d90ed22634f81", @"/Views/Account/ForgetPasswordConfirmation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"16ca7b23444f146cde1e8ae8c313649f341a8a5e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"29e03f2fbd4cd441d6555cf1f781e3b512665f7b", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_ForgetPasswordConfirmation : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

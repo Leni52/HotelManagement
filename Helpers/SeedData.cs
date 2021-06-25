@@ -50,6 +50,41 @@ namespace HotelManagement.Helpers
                     }
 
                 );
+
+
+
+                Review rv2 = new Review()
+                {
+
+                    RoomNumber = 101,
+                    ReviewerName = "Tom",
+                    ReviewerEmail = "tom@tom.com",
+                    Description = "Nice room"
+                };
+                RoomType r2 = new RoomType()
+                {
+
+                    Name = "RoomType2",
+                    BasePrice = 2000,
+                    Description = "Economic class",
+                    ImageUrl = "img/2.jpg",
+
+                };
+                context.Rooms.AddRange(
+                    new Room
+                    {
+
+                        Number = 101,
+                        RoomType = r2,
+                        Available = true,
+                        Price = 2000,
+                        Description = "Very Nice room",
+                        MaximumGuests = 2,
+
+
+                    }
+                    );
+
                 context.SaveChanges();
             }
         }

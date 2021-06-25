@@ -33,18 +33,22 @@ namespace HotelManagement.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CustomerAdress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerCity")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerPhone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateCreated")
@@ -59,7 +63,10 @@ namespace HotelManagement.Migrations
                     b.Property<bool>("Paid")
                         .HasColumnType("bit");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalFee")
@@ -91,7 +98,10 @@ namespace HotelManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
                     b.HasKey("ReviewId");
@@ -111,6 +121,9 @@ namespace HotelManagement.Migrations
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
 
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -123,6 +136,9 @@ namespace HotelManagement.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ReviewId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("RoomTypeId")
                         .HasColumnType("int");
@@ -162,10 +178,8 @@ namespace HotelManagement.Migrations
             modelBuilder.Entity("HotelManagement.Models.Booking", b =>
                 {
                     b.HasOne("HotelManagement.Models.Room", "Room")
-                        .WithMany("Bookings")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Booking")
+                        .HasForeignKey("RoomId");
 
                     b.Navigation("Room");
                 });
@@ -173,10 +187,8 @@ namespace HotelManagement.Migrations
             modelBuilder.Entity("HotelManagement.Models.Review", b =>
                 {
                     b.HasOne("HotelManagement.Models.Room", "Room")
-                        .WithMany("Reviews")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Review")
+                        .HasForeignKey("RoomId");
 
                     b.Navigation("Room");
                 });
@@ -192,9 +204,9 @@ namespace HotelManagement.Migrations
 
             modelBuilder.Entity("HotelManagement.Models.Room", b =>
                 {
-                    b.Navigation("Bookings");
+                    b.Navigation("Booking");
 
-                    b.Navigation("Reviews");
+                    b.Navigation("Review");
                 });
 #pragma warning restore 612, 618
         }

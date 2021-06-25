@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\IRoomRepository.cs" />
+    <Compile Remove="Models\RoomRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Shared\_Validation.cshtml" />
   </ItemGroup>
 

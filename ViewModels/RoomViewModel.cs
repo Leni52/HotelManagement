@@ -7,8 +7,8 @@ namespace HotelManagement.ViewModels
 {
     public class RoomViewModel
     {
-        public Room room { get; set; }
-
+       
+        public Room Room { get; set; }
         public string Action { get; set; } = "Create";
         //the name of the action method for the current task
 
@@ -20,17 +20,22 @@ namespace HotelManagement.ViewModels
         //ShowAction is used to control the visibility of the button 
         //that submits the form
 
-        public IEnumerable<RoomType> roomTypes { get; set; } =
+        //1 room - 1 roomType
+
+        public IEnumerable<RoomType> RoomTypes { get; set; } =
             Enumerable.Empty<RoomType>();
 
         //Booking
         //1 room - N Bookings
-        public IEnumerable<Booking> Bookings { get; set; }
+        public IEnumerable<Booking> Bookings { get; set; } =
+            Enumerable.Empty<Booking>();
+
 
         //Review
         //1 room - N Reviews
 
-        public IEnumerable<Review> Reviews { get; set; }
+        public IEnumerable<Review> Reviews { get; set; } =
+            Enumerable.Empty<Review>();
 
 
 

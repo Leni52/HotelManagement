@@ -23,8 +23,12 @@ namespace HotelManagement.Models
         [Required]
         public int MaximumGuests { get; set; }
 
-        public virtual List<Review> Reviews {get; set;}
-    public virtual List<Booking> Bookings {get; set;}
+        public  int ReviewId{ get; set; }
+        public IEnumerable<Review> Review {get; set;}
 
+        public int BookingId { get; set; }
+        public IEnumerable<Booking> Booking {get; set;}
+        //1 room - many reviews
+        //1 room - many bookings
     }
 }

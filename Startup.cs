@@ -2,6 +2,7 @@
 using HotelManagement.Helpers;
 using HotelManagement.Models;
 using HotelManagement.Models.Contexts;
+using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -49,6 +50,11 @@ namespace HotelManagement
             services.Configure<MvcOptions>(opts => opts.ModelBindingMessageProvider
             .SetValueMustNotBeNullAccessor(value => "Please enter a value."));
 
+            services.Configure<AntiforgeryOptions>(opts => {
+                opts.HeaderName = "X-XSRF-TOKEN";
+            });
+
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequiredLength = 6;
@@ -70,11 +76,11 @@ namespace HotelManagement
             app.UseRouting();
           
             app.UseAuthentication();
-            app.UseEndpoints(endpoints =>
-            {
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute("forms", "controllers/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapDefaultControllerRoute();
 
-               
             });
             SeedData.SeedDatabase(context);
         }

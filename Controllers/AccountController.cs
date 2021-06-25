@@ -134,7 +134,7 @@ namespace HotelManagement.Controllers
             if (ModelState.IsValid)
             {
                 var user = await userManager.FindByEmailAsync(model.Email);
-                if (user == null || await userManager.IsEmailConfirmedAsync(user)) ;
+               // if (user == null || await userManager.IsEmailConfirmedAsync(user));
 
             }
 
