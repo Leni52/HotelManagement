@@ -69,7 +69,7 @@ namespace HotelManagement.Controllers
         public IActionResult Create()
         {
             return View("RoomEditor", ViewModelFactory.Create(new Room(),
-             roomTypes, reviews));
+             roomTypes));
         }
 
         [HttpPost]
@@ -79,13 +79,13 @@ namespace HotelManagement.Controllers
             {
                 room.RoomId = default;
                 room.RoomType = default;
-                room.Review = default;
+               
                 context.Rooms.Add(room);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View("RoomEditor",
-                ViewModelFactory.Create(room, roomTypes, reviews));
+                ViewModelFactory.Create(room, roomTypes));
         }
 
     }

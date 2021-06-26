@@ -168,3 +168,4 @@ C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\ForgetPasswordConfirmation.cshtml.g.cs
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Home\RoomEditor.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs

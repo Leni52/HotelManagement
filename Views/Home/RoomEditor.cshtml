@@ -27,24 +27,19 @@
 
     </div>
 
-        <div class="form-group">
-    <label asp-for="Room.RoomType.RoomTypeId">Room Type</label>
-    <div>
-    <span asp-validation-for="Room.RoomType.RoomTypeId" class="text-danger"></span>
-   
-
+    
+ <div class="form-group">
+  <label asp-for="Room.RoomTypeId">Room Type</label>   
+ <div>
+    <span asp-validation-for="Room.RoomTypeId" class="text-danger"></span>
 </div>
-
-
-<select asp-for="Room.RoomType" class="form-control" disabled="@Model.ReadOnly" 
-asp-items="@(new SelectList(Model.RoomTypes, "RoomType.RoomTypeId", "RoomType.Name"))">
-    <option value="" disabled selected>Choose a room type</option>
+<select asp-for="Room.RoomTypeId" class="form-control" disabled="@Model.ReadOnly"
+    asp-items="@(new SelectList(Model.RoomTypes, "RoomTypeId"))">
+    <option value="" disabled selected>Choose the room type</option>
 </select>
+
 </div>
-    
-
-
-    
+   
 
 
     @if (Model.ShowAction)

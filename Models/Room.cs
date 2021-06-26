@@ -11,6 +11,7 @@ namespace HotelManagement.Models
         public int RoomId { get; set; }
         [Required]
         public int Number { get; set; }
+        public int  RoomTypeId { get; set; }
         public virtual RoomType RoomType { get; set; }
 
         [Required]

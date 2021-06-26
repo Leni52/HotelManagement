@@ -32,14 +32,13 @@ namespace HotelManagement.Models
         ///
 
 
-        public static RoomViewModel Create(Room room, IEnumerable<RoomType> roomTypes,
-            IEnumerable<Review> reviews)
+        public static RoomViewModel Create(Room room, IEnumerable<RoomType> roomTypes)
         {
             return new RoomViewModel
             {
                 Room = room,
                 RoomTypes = roomTypes,
-                Reviews = reviews
+                //Reviews = reviews
             };
 
         }
