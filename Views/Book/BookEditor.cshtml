@@ -1,0 +1,49 @@
+﻿@model BookingViewModel
+@{
+    Layout = "_Layout";
+}
+
+
+<h5 class="bg-@Model.Theme text-white text-center p-2">@Model.Action</h5>
+
+<form asp-action="@Model.Action" method="post">
+<div class="form-group">
+    <label asp-for="Booking.BookingId"></label>
+    <input class="form-control" asp-for="Booking.BookingId"  />
+
+</div>
+<div class="form-group">
+    <label asp-for="Booking.CheckIn"></label>
+    <span asp-validation-for="Booking.CheckIn" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CheckIn" />
+
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.CheckOut"></label>
+    <span asp-validation-for="Booking.CheckOut" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CheckOut" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.Room">Room</label>
+    <div>
+    <span asp-validation-for="Booking.RoomNumber" class="text-danger"></span>
+   
+
+</div>
+<select asp-for="Booking.Room" class="form-control"  
+asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
+    <option value="" disabled selected>Choose a room</option>
+</select>
+</div>
+    
+
+
+
+    @if (Model.ShowAction)
+    {
+        <button class="btn btn-@Model.Theme" type="submit">@Model.Action</button>
+    }
+    <a class="btn btn-secondary" asp-action="Index">Back</a>
+</form>

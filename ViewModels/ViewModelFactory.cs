@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Models
 {
+    /// <summary>
+    /// ROOMS
+    /// </summary>
     public class ViewModelFactory
     {
         public static RoomViewModel Details(Room r)
@@ -21,8 +24,6 @@ namespace HotelManagement.Models
                 RoomTypes = r == null ? Enumerable.Empty<RoomType>() :
                   new List<RoomType> { r.RoomType }
              
-
-
 
             };
         }
@@ -49,14 +50,12 @@ namespace HotelManagement.Models
         ///
 
         
-        public static RoomViewModel Edit(Room room, IEnumerable<RoomType> roomTypes, 
-            IEnumerable<Review> reviews)
+        public static RoomViewModel Edit(Room room, IEnumerable<RoomType> roomTypes)
         {
             return new RoomViewModel
             {
                 Room = room,
                 RoomTypes = roomTypes,
-                Reviews = reviews,
                 Theme = "warning",
                 Action = "Edit"
             };
@@ -66,15 +65,14 @@ namespace HotelManagement.Models
         //////DELETE
         ///
 
-        public static RoomViewModel Delete(Room room, IEnumerable<RoomType> roomTypes, 
-            IEnumerable<Review> reviews)
+        public static RoomViewModel Delete(Room room, IEnumerable<RoomType> roomTypes)
         {
             return new RoomViewModel
             {
 
                 Room = room,
                 RoomTypes = roomTypes,
-                Reviews = reviews,
+                
                 Theme = "danger",
                 Action = "Delete",
                 ReadOnly = true

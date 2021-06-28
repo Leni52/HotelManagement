@@ -9,13 +9,13 @@
 <form asp-action="@Model.Action" method="post">
 <div class="form-group">
     <label asp-for="Room.RoomId"></label>
-    <input class="form-control" asp-for="Room.RoomId" readonly />
+    <input class="form-control" asp-for="Room.RoomId" readonly="@Model.ReadOnly" />
 
 </div>
 <div class="form-group">
     <label asp-for="Room.Number"></label>
-    <span asp-validation-for="Room.Description" class="text-danger"></span>
-        <input class="form-control" asp-for="Room.Description" />
+    <span asp-validation-for="Room.Number" class="text-danger"></span>
+        <input class="form-control" asp-for="Room.Number" />
 
 </div>
 
@@ -23,8 +23,24 @@
     <label asp-for="Room.Price"></label>
     <span asp-validation-for="Room.Price" class="text-danger"></span>
         <input class="form-control" asp-for="Room.Price" readonly="@Model.ReadOnly"/>
+    </div>
 
+    <div class="form-group">
+    <label asp-for="Room.Description"></label>
+    <span asp-validation-for="Room.Description" class="text-danger"></span>
+        <input class="form-control" asp-for="Room.Description" readonly="@Model.ReadOnly"/>
 
+    </div>
+
+    <div class="form-group">
+    <label asp-for="Room.MaximumGuests"></label>
+    <span asp-validation-for="Room.MaximumGuests" class="text-danger"></span>
+        <input class="form-control" asp-for="Room.MaximumGuests" readonly="@Model.ReadOnly"/>
+    </div>
+    <div class="form-group">
+    <label asp-for="Room.Available"></label>
+    <span asp-validation-for="Room.Available" class="text-danger"></span>
+        <input type="checkbox" class="form-control" asp-for="Room.Available" readonly="@Model.ReadOnly"/>
     </div>
 
     
@@ -34,7 +50,7 @@
     <span asp-validation-for="Room.RoomTypeId" class="text-danger"></span>
 </div>
 <select asp-for="Room.RoomTypeId" class="form-control" disabled="@Model.ReadOnly"
-    asp-items="@(new SelectList(Model.RoomTypes, "RoomTypeId"))">
+    asp-items="@(new SelectList(Model.RoomTypes, "RoomTypeId", "Name"))">
     <option value="" disabled selected>Choose the room type</option>
 </select>
 

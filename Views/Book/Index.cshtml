@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Booking>
+@{Layout = "_Layout";
+}
+
+<h5 class="bg-primary text-white text-center p-2">Hotel Management System</h5>
+
+@*  <partial name="_Validation" /> *@
+
+<table class="table table-sm table-bordered table-striped">
+    <thead>
+        <tr>
+           <th>ID</th>
+           <th>Room Number</th>
+           <th>Check In</th>
+           <th>Check Out</th>
+           <th>Guests</th>
+           <th>Total Fee</th>
+              <th>Paid</th>
+
+              <th>Customer Name</th>
+               <th>Customer Email</th> 
+           <th>Customer Phone</th>
+            <th>Customer Adress</th>
+             <th>Customer City</th>
+              <th>Other Requests</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Booking b in Model) {
+            <tr>
+               <td>@b.BookingId</td>
+               <td>@b.RoomNumber</td>
+               <td>@b.CheckIn</td>
+               <td>@b.CheckOut</td>
+               <td>@b.Guests</td>
+
+               <td>@b.TotalFee</td>
+              
+               @if (b.Paid == true)
+                {
+                   <td>Yes</td>  
+                }
+               else
+              { <td>No</td>   }
+
+              <td>@b.CustomerName</td>
+              <td>@b.CustomerEmail</td>
+              <td>@b.CustomerPhone</td>
+
+              <td>@b.CustomerAdress</td>
+              <td>@b.CustomerCity</td>
+              <td>@b.OtherRequests</td>
+           
+                
+               
+                    <a asp-action="Details" asp-route-id="@b.BookingId"
+                       class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@b.BookingId"
+                       class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@b.BookingId"
+                       class="btn btn-sm btn-danger">Delete</a>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+
+
