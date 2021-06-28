@@ -9,7 +9,13 @@
 <table class="table table-sm table-bordered table-striped">
     <thead>
         <tr>
-           <th>ID</th><th>Price</th><th>Room Type</th><th>Description</th>
+           <th>ID</th>
+           <th>Price</th>
+           <th>Room Type</th>
+           <th>Description</th>
+           <th>Available</th>
+           <th>Maximum Guests</th>
+              <th>Review</th>
         </tr>
     </thead>
     <tbody>
@@ -17,19 +23,30 @@
             <tr>
                 <td>@r.RoomId</td>
                 <td>@r.Price</td>
-                <td>@r.RoomType</td>
+                <td>@r.RoomType.Name</td>
                 <td>@r.Description</td>
+               @if (r.Available == true)
+                {
+                   <td>Yes</td>  
+                }
+               else
+              { <td>No</td>   }
+                <td>@r.MaximumGuests</td>
+                <td>@r.ReviewId</td>
                 <td class="text-center">
+                     <a asp-controller="Book" asp-action="BookRoom" asp-route-id="@r.RoomId"
+                       class="btn btn-sm btn-info">Book this room</a>
+               
                     <a asp-action="Details" asp-route-id="@r.RoomId"
                        class="btn btn-sm btn-info">Details</a>
-                    <a asp-action="Edit" asp-route-id="@r.RoomType"
+                    <a asp-action="Edit" asp-route-id="@r.RoomId"
                        class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@r.Description"
+                    <a asp-action="Delete" asp-route-id="@r.RoomId"
                        class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<a asp-action="Create" class="btn btn-primary">Create</a>
+<a asp-action="Create" class="btn btn-primary">Create a new room</a>
 

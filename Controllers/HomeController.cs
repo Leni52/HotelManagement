@@ -12,8 +12,8 @@ namespace HotelManagement.Controllers
     public class HomeController : Controller
     {
         private DataContext context;
-        private IEnumerable<RoomType> roomTypes => context.RoomTypes;
-        private IEnumerable<Review> reviews => context.Reviews;
+        private IEnumerable<RoomType> RoomTypes => context.RoomTypes;
+        private IEnumerable<Review> Reviews => context.Reviews;
 
         private IEnumerable<Booking> bookings => context.Bookings;
 
@@ -46,30 +46,20 @@ namespace HotelManagement.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             
-            Room r = await context.Rooms.FirstAsync(r => r.RoomId == id);
+            Room r = await context.Rooms.Include(r=>r.RoomType).FirstAsync(r => r.RoomId == id);
 
             RoomViewModel model = ViewModelFactory.Details(r);
              return View("RoomEditor", model);
             
             
-            /*
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var s = await context.Rooms.Include(s => s.RoomType).FirstOrDefaultAsync(s => s.RoomId == id);
-            if (s == null)
-            {
-                return NotFound();
-            }
-            return View("RoomEditor",s);
-        */
+          
+    
         }
 
         public IActionResult Create()
         {
             return View("RoomEditor", ViewModelFactory.Create(new Room(),
-             roomTypes, reviews));
+             RoomTypes));
         }
 
         [HttpPost]
@@ -78,14 +68,56 @@ namespace HotelManagement.Controllers
             if (ModelState.IsValid)
             {
                 room.RoomId = default;
-                room.RoomType = default;
-                room.Review = default;
+                
+               
                 context.Rooms.Add(room);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View("RoomEditor",
-                ViewModelFactory.Create(room, roomTypes, reviews));
+                ViewModelFactory.Create(room, RoomTypes));
+        }
+
+        ////////////////////
+        ///
+        public async Task<IActionResult> Edit(int id)
+        {
+            Room r = await context.Rooms.FindAsync(id);
+            RoomViewModel model = ViewModelFactory.Edit(r, RoomTypes);
+            return View("RoomEditor", model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit([FromForm]Room room)
+        {
+            if (ModelState.IsValid)
+            {
+                room.RoomType = default;
+
+                context.Rooms.Update(room);
+                await context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View("RoomEditor", ViewModelFactory.Edit(room, RoomTypes));
+
+
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+
+            RoomViewModel model = ViewModelFactory.Delete(await
+                context.Rooms.FindAsync(id), RoomTypes);
+            return View("RoomEditor", model);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Delete(Room room)
+        {
+            context.Rooms.Remove(room);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
     }
