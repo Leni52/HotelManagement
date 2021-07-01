@@ -15,7 +15,7 @@ namespace HotelManagement.ViewModels
             {
                Booking = b,
                 Action = "Details",
-               
+                ReadOnly = true,
                 Theme = "info",
                 ShowAction = false,
                
@@ -67,7 +67,7 @@ namespace HotelManagement.ViewModels
             {
 
                Booking=b,
-
+                ReadOnly = true,
                 Theme = "danger",
                 Action = "Delete",
                

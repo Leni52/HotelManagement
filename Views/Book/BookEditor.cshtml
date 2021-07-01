@@ -8,21 +8,21 @@
 
 <form asp-action="@Model.Action" method="post">
 <div class="form-group">
-    <label asp-for="Booking.BookingId"></label>
-    <input class="form-control" asp-for="Booking.BookingId"  />
+   @*   <label asp-for="Booking.BookingId"></label> *@
+    <input type="hidden" class="form-control" disabled asp-for="Booking.BookingId" readonly="@Model.ReadOnly"/>
 
 </div>
 <div class="form-group">
     <label asp-for="Booking.CheckIn"></label>
     <span asp-validation-for="Booking.CheckIn" class="text-danger"></span>
-        <input class="form-control" asp-for="Booking.CheckIn" />
+        <input type="date" class="form-control" asp-for="Booking.CheckIn" />
 
 </div>
 
 <div class="form-group">
     <label asp-for="Booking.CheckOut"></label>
     <span asp-validation-for="Booking.CheckOut" class="text-danger"></span>
-        <input class="form-control" asp-for="Booking.CheckOut" />
+        <input type="date" class="form-control" asp-for="Booking.CheckOut" />
 </div>
 
 <div class="form-group">
@@ -40,7 +40,55 @@ asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
     
 
 
+<div class="form-group">
+    <label asp-for="Booking.Guests"></label>
+    <span asp-validation-for="Booking.Guests" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="Booking.Guests" />
+</div>
 
+<div class="form-group">
+    <label asp-for="Booking.TotalFee">Price to pay:</label>
+    <span asp-validation-for="Booking.TotalFee" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.TotalFee" disabled />
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.CustomerName"></label>
+    <span asp-validation-for="Booking.CustomerName" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CustomerName" />
+</div>
+<div class="form-group">
+    <label asp-for="Booking.CustomerPhone"></label>
+    <span asp-validation-for="Booking.CustomerPhone" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CustomerPhone" />
+</div>
+<div class="form-group">
+    <label asp-for="Booking.CustomerName"></label>
+    <span asp-validation-for="Booking.CustomerName" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CustomerName" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.CustomerAdress"></label>
+    <span asp-validation-for="Booking.CustomerAdress" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CustomerAdress" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.CustomerCity"></label>
+    <span asp-validation-for="Booking.CustomerCity" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.CustomerCity" />
+</div>
+<div class="form-group">
+    <label asp-for="Booking.OtherRequests"></label>
+    <span asp-validation-for="Booking.OtherRequests" class="text-danger"></span>
+        <input class="form-control" asp-for="Booking.OtherRequests" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Booking.DateCreated">Created on: @DateTime.Now</label>
+       @*   <input type="date" class="form-control" disabled asp-for="Booking.DateCreated" readonly="@Model.ReadOnly"/>*@
+</div>
     @if (Model.ShowAction)
     {
         <button class="btn btn-@Model.Theme" type="submit">@Model.Action</button>

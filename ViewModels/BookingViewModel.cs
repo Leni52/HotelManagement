@@ -16,5 +16,6 @@ namespace HotelManagement.ViewModels
         public string Action { get; set; } = "Create";
 
         public bool ShowAction { get; set; } = true;
+        public bool ReadOnly { get; set; } = false;
     }
 }

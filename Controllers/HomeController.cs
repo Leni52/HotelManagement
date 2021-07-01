@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelManagement.Controllers
 {
+   
     public class HomeController : Controller
     {
         private DataContext context;
@@ -22,7 +24,7 @@ namespace HotelManagement.Controllers
             context = data;
         }
 
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(context.Rooms.Include(r=>r.RoomType));
@@ -55,14 +57,16 @@ namespace HotelManagement.Controllers
           
     
         }
-
+        [HttpGet]
+    
         public IActionResult Create()
         {
             return View("RoomEditor", ViewModelFactory.Create(new Room(),
              RoomTypes));
         }
-
+       
         [HttpPost]
+      
         public async Task<IActionResult> Create([FromForm] Room room)
         {
             if (ModelState.IsValid)
@@ -79,7 +83,10 @@ namespace HotelManagement.Controllers
         }
 
         ////////////////////
+        /// <summary>
         ///
+        /// 
+       
         public async Task<IActionResult> Edit(int id)
         {
             Room r = await context.Rooms.FindAsync(id);
@@ -87,6 +94,7 @@ namespace HotelManagement.Controllers
             return View("RoomEditor", model);
         }
         [HttpPost]
+       
         public async Task<IActionResult> Edit([FromForm]Room room)
         {
             if (ModelState.IsValid)
