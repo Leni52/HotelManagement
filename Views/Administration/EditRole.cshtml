@@ -1,0 +1,58 @@
+﻿@model EditRoleViewModel
+@{
+    ViewData["Title"] = "EditRole";
+}
+
+<h1>EditRole</h1>
+
+<form method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Id" disabled class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="RoleName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="RoleName" disabled class="form-control" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="Submit" class="btn btn-primary">Update</button>
+        <a asp-action="ListRoles" class="btn btn-primary">Cancel</a>
+      </div>
+    </div>
+
+    @* present all the users that belong to the selected role  *@
+
+    <div class="card-header">
+        <h3>Users in this role:</h3>
+
+    </div>
+    <div class="card-body">
+        @if (Model.Users.Any())
+        {
+            foreach(var user in Model.Users){
+                <h5 class="card-title">@user</h5>
+        }
+        }
+        else
+        {
+            <h5 class="card-title">No users at the moment.</h5>
+        }
+
+    </div>
+    <div class="card-footer">
+        <a asp-action="EditUsersInRole" asp-controller="Administration"
+        asp-route-roleId="@Model.Id"
+        class="btn btn-primary">Add or remove users</a>
+
+    </div>
+</form>

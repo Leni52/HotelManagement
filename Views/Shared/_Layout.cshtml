@@ -1,5 +1,5 @@
 ﻿
-@inject SignInManager<IdentityUser> signInManager;
+@inject SignInManager<ApplicationUser> signInManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,15 +26,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="index" asp-controller="home">Home</a>
+                            <a class="nav-link text-dark" asp-action="index" asp-controller="home">Book a room</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="about" asp-controller="home">About</a>
+                            <a class="nav-link text-dark" asp-action="about" asp-controller="home">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="contact" asp-controller="home">Contact</a>
+                            <a class="nav-link text-dark" asp-action="contact" asp-controller="home">Contact Us</a>
                         </li>
-                        
+                        @if(signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="ListRoles" asp-controller="Administration">Manage roles</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-action="Index" asp-controller="Book">All bookings</a>
+                        </li>
+
+                        }
 
                     </ul>
                     <ul class="navbar-nav ml-auto">
@@ -54,11 +65,11 @@
                            <li class="nav-item">
                             <a class="nav-link text-dark" asp-action="register" asp-controller="account">Register</a>
                         </li>  
-                        }
+                        
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-action="login" asp-controller="account">Login</a>
                         </li>
-
+                            }
                     </ul>
                 </div>
             </div>

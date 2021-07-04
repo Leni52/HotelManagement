@@ -172,3 +172,8 @@ C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Book\Index.cshtml.g.cs
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Administration\CreateRole.cshtml.g.cs
 C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Account\AccesDenied.cshtml.g.cs
+C:\Users\CC-Student\source\repos\HotelManagement\HotelManagement\obj\Debug\net5.0\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs

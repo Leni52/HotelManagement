@@ -2,7 +2,7 @@
 @{Layout = "_Layout";
 }
 
-<h5 class="bg-primary text-white text-center p-2">Hotel Management System</h5>
+<h5 class="bg-primary text-white text-center p-2">Please choose from out wide range of rooms</h5>
 
 @*  <partial name="_Validation" /> *@
 
@@ -35,7 +35,7 @@
                 <td>@r.ReviewId</td>
                 <td class="text-center">
                      <a asp-controller="Book" asp-action="Create" asp-route-id="@r.RoomId"
-                       class="btn btn-sm btn-info">Book this room</a>
+                       class="btn btn-sm btn-success">Book this room</a>
                
                     <a asp-action="Details" asp-route-id="@r.RoomId"
                        class="btn btn-sm btn-info">Details</a>

@@ -20,5 +20,6 @@ namespace HotelManagement.ViewModels
         [Display(Name ="Confirm Password")]
         [Compare("Password", ErrorMessage ="The password and confirm password must match.")]
         public string ConfirmPassword { get; set; }
+        public string Token { get; set; }
     }
 }

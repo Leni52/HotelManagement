@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,7 +15,11 @@ namespace HotelManagement.Models
         public int  RoomTypeId { get; set; }
         public virtual RoomType RoomType { get; set; }
 
-        [Required]
+        
+        [Column(TypeName = "decimal(8, 2)")]
+        [Required(ErrorMessage = "Please enter a price")]
+        [Range(1, 999999, ErrorMessage = "Please enter a positive price")]
+
         public decimal Price { get; set; }
 
         [Required]

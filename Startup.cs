@@ -48,7 +48,7 @@ namespace HotelManagement
 
                 opts.UseSqlServer(Configuration["ConnectionStrings:IdentityDb"]));
             
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
             services.Configure<MvcOptions>(opts => opts.ModelBindingMessageProvider
             .SetValueMustNotBeNullAccessor(value => "Please enter a value."));
 
@@ -85,8 +85,9 @@ namespace HotelManagement
             app.UseStaticFiles();
            
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+            
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
                 endpoints.MapControllerRoute("forms", "controllers/{controller=Home}/{action=Index}/{id?}");

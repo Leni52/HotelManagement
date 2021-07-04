@@ -9,13 +9,13 @@
 <form asp-action="@Model.Action" method="post">
 <div class="form-group">
     <label asp-for="Room.RoomId"></label>
-    <input class="form-control" asp-for="Room.RoomId" readonly="@Model.ReadOnly" />
+    <input class="form-control" asp-for="Room.RoomId" readonly />
 
 </div>
 <div class="form-group">
     <label asp-for="Room.Number"></label>
     <span asp-validation-for="Room.Number" class="text-danger"></span>
-        <input class="form-control" asp-for="Room.Number" />
+        <input class="form-control" asp-for="Room.Number" readonly="@Model.ReadOnly" />
 
 </div>
 
@@ -39,8 +39,25 @@
     </div>
     <div class="form-group">
     <label asp-for="Room.Available"></label>
-    <span asp-validation-for="Room.Available" class="text-danger"></span>
-        <input type="checkbox" class="form-control" asp-for="Room.Available" readonly="@Model.ReadOnly"/>
+    <span asp-validation-for="Room.Available" class="text-danger"></span> <br />
+  @*  
+    <input type="radio" id="yes" name="available"  readonly />   
+    <label for="yes">Yes</label>
+     <input type="radio" id="no" name="available"  readonly />   
+    <label for="no">No</label>
+    *@
+        @if (Model.Action == "Details")
+        {
+           
+            
+                 <text>Yes</text>
+            
+           
+        }
+        else
+        {
+             <text>No</text>
+        }
     </div>
 
     

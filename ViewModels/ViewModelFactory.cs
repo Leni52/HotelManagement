@@ -75,7 +75,7 @@ namespace HotelManagement.Models
                 
                 Theme = "danger",
                 Action = "Delete",
-                ReadOnly = true
+                //ReadOnly = true
             };
         }
     }

@@ -67,7 +67,7 @@ namespace HotelManagement.Controllers
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View("ProductEditor",
+            return View("BookEditor",
                 BookViewModelFactory.Edit(booking, Rooms));
         }
 

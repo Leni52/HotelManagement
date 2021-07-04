@@ -24,7 +24,8 @@
                <a class="btn btn-primary"
            asp-action="EditRole" asp-controller="Administration"
            asp-route-id="@role.Id">Edit</a>
-                <a href="#" class="btn btn-primary">Delete</a>
+                <a class="btn btn-primary" asp-action="DeleteRole" asp-controller="Administration"
+           asp-route-id="@role.Id" >Delete</a>
            </div>
         </div>
     }

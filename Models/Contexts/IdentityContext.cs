@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Models.Contexts
 {
-    public class IdentityContext:IdentityDbContext
+    public class IdentityContext:IdentityDbContext<ApplicationUser>
     {
 
 
@@ -15,5 +15,6 @@ namespace HotelManagement.Models.Contexts
           : base(opts)
         {
         }
+
     }
 }
