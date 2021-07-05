@@ -26,10 +26,13 @@ namespace HotelManagement.Controllers
 
         [AllowAnonymous]
         public IActionResult Index()
-        {
-            return View(context.Rooms.Include(r=>r.RoomType));
+        {            
+           return View(context.Rooms.Include(r=>r.RoomType));
         }
-
+        public IActionResult Start()
+        {
+            return View("~/Views/Home/Start.cshtml");
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -52,10 +55,7 @@ namespace HotelManagement.Controllers
 
             RoomViewModel model = ViewModelFactory.Details(r);
              return View("RoomEditor", model);
-            
-            
-          
-    
+                    
         }
         [HttpGet]
     

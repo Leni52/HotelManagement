@@ -11,7 +11,7 @@ namespace HotelManagement.ViewModels
         public Booking Booking { get; set; }
      
         public IEnumerable<Room> Rooms { get; set; }
-     
+      
         public string Theme { get; set; } = "primary";
         public string Action { get; set; } = "Create";
 

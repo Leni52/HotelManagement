@@ -90,7 +90,7 @@ namespace HotelManagement
             
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
-                endpoints.MapControllerRoute("forms", "controllers/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("forms", "controllers/{controller=Home}/{action=Start}/{id?}");
                 endpoints.MapDefaultControllerRoute();
 
             });

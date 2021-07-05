@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Controllers
 {
-    [AutoValidateAntiforgeryToken]
+   [AutoValidateAntiforgeryToken]
     public class BookController : Controller
     {
         private DataContext context;
@@ -57,12 +57,12 @@ namespace HotelManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit([FromForm] Booking booking)
+        public async Task<IActionResult> Edit([FromForm] Booking booking, Room room)
         {
             if (ModelState.IsValid)
             {
                booking.BookingId = default;
-               
+                booking.TotalFee = room.Price;
                 context.Bookings.Update(booking);
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

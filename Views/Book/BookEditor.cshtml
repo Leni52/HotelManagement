@@ -25,21 +25,21 @@
     <span asp-validation-for="Booking.CheckOut" class="text-danger"></span>
         <input type="date" onload="getDate()" class="form-control" asp-for="Booking.CheckOut" />
 </div>
-
+@* 
 <div class="form-group">
-    <label asp-for="Booking.Room">Room</label>
+    <label asp-for="Booking.RoomId">Room</label>
     <div>
-    <span asp-validation-for="Booking.RoomNumber" class="text-danger"></span>
+    <span asp-validation-for="Booking.RoomId" class="text-danger"></span>
    
 
 </div>
-<select asp-for="Booking.Room" class="form-control"  
+<select asp-for="Booking.RoomId" class="form-control"  
 asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
     <option value="" disabled selected>Choose a room</option>
 </select>
 </div>
     
-
+ *@
 
 <div class="form-group">
     <label asp-for="Booking.Guests"></label>
@@ -48,7 +48,7 @@ asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
 </div>
 
 <div class="form-group">
-    <label asp-for="Booking.TotalFee">Price to pay: </label>
+    <label asp-for="Booking.TotalFee">Price to pay:   </label>
     <span asp-validation-for="Booking.TotalFee" class="text-danger"></span>
         <input class="form-control" asp-for="Booking.TotalFee" disabled />
 </div>

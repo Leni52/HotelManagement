@@ -503,12 +503,12 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/5.0.6": {
+      "Microsoft.EntityFrameworkCore.Design/5.0.7": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.6"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.7"
         },
         "compile": {
           "lib/netstandard2.1/_._": {}
@@ -546,11 +546,11 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.6": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.7": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.6"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.7"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
@@ -3532,10 +3532,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/5.0.6": {
-      "sha512": "2hjMovtUx3zvMMJDNjFFtYbiYRg7SNAyRe3JQzCYy7kXfADcyr7tuf9meq0lxGZBf8qvilYcDaBj5M+iq90krQ==",
+    "Microsoft.EntityFrameworkCore.Design/5.0.7": {
+      "sha512": "r/0Jkp7HCzWSXdC79jwK4JKNw16s88E23U46rCu+I1zYYXg+w4TR/S9zAkQNHiNkaCFyGUod/b5ZoQCI5eqJ2A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/5.0.6",
+      "path": "microsoft.entityframeworkcore.design/5.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3543,7 +3543,7 @@
         "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.5.0.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.5.0.7.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -3576,17 +3576,17 @@
         "microsoft.entityframeworkcore.relational.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.6": {
-      "sha512": "OQFZB8hOaaU+VO62MHdkAVkPbfH+Yx8Kp+Bp+LKnmX7HxDGe/8DEOJSoHKAE8gFUTaSnJ5/OvBKNxXefeAyT0g==",
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.7": {
+      "sha512": "xfMz5GfjB/xwafBM27Qjrn9JtJE5EDJpz73caUlVJWfZtNL7fhULFsIiwfx+RpupWqtvFpp9q9OTouJ9UMtWOw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.6",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.5.0.6.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.5.0.7.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -9269,8 +9269,8 @@
       "Microsoft.AspNet.Identity.Core >= 2.2.3",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.7",
-      "Microsoft.EntityFrameworkCore.Design >= 5.0.6",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.7",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.Extensions.Identity.Core >= 5.0.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
@@ -9282,11 +9282,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "projectUniqueName": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
       "projectName": "HotelManagement",
-      "projectPath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "projectPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
       "packagesPath": "C:\\Users\\CC-Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\obj\\",
+      "outputPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CC-Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9335,11 +9335,11 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[5.0.6, )"
+            "version": "[5.0.7, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[5.0.6, )"
+            "version": "[5.0.7, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer.Design": {
             "target": "Package",

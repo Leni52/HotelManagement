@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {}
+    "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {
+    "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+        "projectUniqueName": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
         "projectName": "HotelManagement",
-        "projectPath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+        "projectPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
         "packagesPath": "C:\\Users\\CC-Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\obj\\",
+        "outputPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CC-Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,11 +60,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",

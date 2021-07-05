@@ -29,7 +29,7 @@ namespace HotelManagement.Helpers
                 RoomType r1 = new RoomType()
                 {
                  
-                    Name = "RoomType1",
+                    Name = "Luxury",
                     BasePrice = 1000,
                     Description = "Economic class",
                     ImageUrl = "img/1.jpg",
@@ -64,7 +64,7 @@ namespace HotelManagement.Helpers
                 RoomType r2 = new RoomType()
                 {
 
-                    Name = "RoomType2",
+                    Name = "Economic",
                     BasePrice = 2000,
                     Description = "Economic class",
                     ImageUrl = "img/2.jpg",

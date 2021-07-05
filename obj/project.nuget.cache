@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5QFb92pIrXsbG53zIxVf6Z8odc/R7mH8afA7hpp20xPVrE0SMOSMoO7uJ/PsYpM0iA3viQYPGMjtecNYzlXicg==",
+  "dgSpecHash": "CYh96g3vhTZgb+gzRrb2QM4Owa3kk8crU8m83uAkI90gZ9BevlRz6YR2zQXqhipcuBND4E/gBaqdYNTc0VobfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CC-Student\\source\\repos\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+  "projectFilePath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CC-Student\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -28,10 +28,10 @@
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.7\\microsoft.entityframeworkcore.5.0.7.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.7\\microsoft.entityframeworkcore.abstractions.5.0.7.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.7\\microsoft.entityframeworkcore.analyzers.5.0.7.nupkg.sha512",
-    "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.6\\microsoft.entityframeworkcore.design.5.0.6.nupkg.sha512",
+    "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.7\\microsoft.entityframeworkcore.design.5.0.7.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.7\\microsoft.entityframeworkcore.relational.5.0.7.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.relational.design\\1.1.6\\microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512",
-    "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.6\\microsoft.entityframeworkcore.sqlserver.5.0.6.nupkg.sha512",
+    "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.7\\microsoft.entityframeworkcore.sqlserver.5.0.7.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.design\\1.1.6\\microsoft.entityframeworkcore.sqlserver.design.1.1.6.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\CC-Student\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

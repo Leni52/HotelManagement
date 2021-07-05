@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.Controllers
 {
-    [Authorize(Roles ="Admin,User")]
+    //[Authorize(Roles ="Admin,User")]
     public class AdministrationController:Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
