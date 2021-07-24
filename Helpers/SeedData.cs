@@ -31,7 +31,7 @@ namespace HotelManagement.Helpers
                  
                     Name = "Luxury",
                     BasePrice = 1000,
-                    Description = "Economic class",
+                    Description = "Economic",
                     ImageUrl = "img/1.jpg",
                     
                 };
@@ -43,7 +43,7 @@ namespace HotelManagement.Helpers
                         RoomType=r1,
                         Available = true,
                         Price=100,
-                        Description = "Very Nice room",
+                        Description = "Enjoy the sea view.",
                         MaximumGuests = 3,
 
 
@@ -78,7 +78,7 @@ namespace HotelManagement.Helpers
                         RoomType = r2,
                         Available = true,
                         Price = 2000,
-                        Description = "Very Nice room",
+                        Description = "Our best selling room.",
                         MaximumGuests = 2,
 
 

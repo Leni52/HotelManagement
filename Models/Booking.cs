@@ -20,6 +20,7 @@ namespace HotelManagement.Models
         [Display(Name = "Check out date")]
         public DateTime CheckOut { get; set; }
         [Required]
+        [Range(1, 999999, ErrorMessage = "Please enter a positive number")]
         [Display(Name = "Number of guests")]
         public int Guests { get; set; }
         [Required]

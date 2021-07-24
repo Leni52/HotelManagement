@@ -40,24 +40,31 @@
     <div class="form-group">
     <label asp-for="Room.Available"></label>
     <span asp-validation-for="Room.Available" class="text-danger"></span> <br />
-  @*  
-    <input type="radio" id="yes" name="available"  readonly />   
-    <label for="yes">Yes</label>
-     <input type="radio" id="no" name="available"  readonly />   
-    <label for="no">No</label>
-    *@
-        @if (Model.Action == "Details")
+ 
+
+        @if (Model.Action == "Details" )
+
         {
-           
-            
-                 <text>Yes</text>
-            
-           
+
+            @if (Model.Room.Available == true)
+            {
+                <text>Yes</text>
+            }
+            else
+            {
+                <text>No</text>
+            }
         }
+
         else
         {
-             <text>No</text>
-        }
+    <input type="radio" id="yes" name="available"  />   
+    <label for="yes">Yes</label>
+     <input type="radio" id="no" name="available"  />   
+    <label for="no">No</label>
+        
+}
+
     </div>
 
     

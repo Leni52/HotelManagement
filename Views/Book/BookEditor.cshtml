@@ -16,30 +16,15 @@
 <div class="form-group">
     <label asp-for="Booking.CheckIn"></label>
     <span asp-validation-for="Booking.CheckIn" class="text-danger"></span>
-        <input type="date" onload="getDate()" class="form-control" asp-for="Booking.CheckIn" />
+        <input type="date" value="2021-07-24" class="form-control" asp-for="Booking.CheckIn" />
 
 </div>
 
 <div class="form-group">
     <label asp-for="Booking.CheckOut"></label>
     <span asp-validation-for="Booking.CheckOut" class="text-danger"></span>
-        <input type="date" onload="getDate()" class="form-control" asp-for="Booking.CheckOut" />
+        <input type="date" value="2021-07-24" class="form-control" asp-for="Booking.CheckOut" />
 </div>
-@* 
-<div class="form-group">
-    <label asp-for="Booking.RoomId">Room</label>
-    <div>
-    <span asp-validation-for="Booking.RoomId" class="text-danger"></span>
-   
-
-</div>
-<select asp-for="Booking.RoomId" class="form-control"  
-asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
-    <option value="" disabled selected>Choose a room</option>
-</select>
-</div>
-    
- *@
 
 <div class="form-group">
     <label asp-for="Booking.Guests"></label>
@@ -48,9 +33,9 @@ asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
 </div>
 
 <div class="form-group">
-    <label asp-for="Booking.TotalFee">Price to pay:   </label>
+    <label asp-for="Booking.TotalFee" hidden>Price to pay:   </label>
     <span asp-validation-for="Booking.TotalFee" class="text-danger"></span>
-        <input class="form-control" asp-for="Booking.TotalFee" disabled />
+        <input class="form-control" asp-for="Booking.TotalFee" hidden/>
 </div>
 
 <div class="form-group">
@@ -65,7 +50,7 @@ asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
 </div>
 <div class="form-group">
     <label asp-for="Booking.CustomerEmail"></label>
-    <span asp-validation-for="Booking.CustomerPhone" class="text-danger"></span>
+    <span asp-validation-for="Booking.CustomerEmail" class="text-danger"></span>
         <input class="form-control" asp-for="Booking.CustomerEmail" />
 </div>
 
@@ -89,7 +74,7 @@ asp-items="@(new SelectList(Model.Rooms, "RoomId", "Number"))">
 
 <div class="form-group">
     <label asp-for="Booking.DateCreated">Created on: @DateTime.Now</label>
-       @*   <input type="date" class="form-control" disabled asp-for="Booking.DateCreated" readonly="@Model.ReadOnly"/>*@
+   
 </div>
 
 

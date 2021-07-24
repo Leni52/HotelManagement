@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj": {}
+    "C:\\Users\\CC-Student\\Desktop\\example\\HotelManagement\\HotelManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj": {
+    "C:\\Users\\CC-Student\\Desktop\\example\\HotelManagement\\HotelManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
+        "projectUniqueName": "C:\\Users\\CC-Student\\Desktop\\example\\HotelManagement\\HotelManagement.csproj",
         "projectName": "HotelManagement",
-        "projectPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\HotelManagement.csproj",
+        "projectPath": "C:\\Users\\CC-Student\\Desktop\\example\\HotelManagement\\HotelManagement.csproj",
         "packagesPath": "C:\\Users\\CC-Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CC-Student\\Desktop\\Hotel\\HotelManagement\\obj\\",
+        "outputPath": "C:\\Users\\CC-Student\\Desktop\\example\\HotelManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CC-Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
